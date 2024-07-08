@@ -95,15 +95,15 @@ if __name__ == "__main__":
     # parse in the inputs/outputs from argparse
     parser = argparse.ArgumentParser(description="Process some input and output files with a sample size.")
     
-    parser.add_argument('input', type=str, help='Input file path')
-    parser.add_argument('output', type=str, help='Output png prefix')
+    parser.add_argument('input_bam', type=str, help='Input file path')
+    parser.add_argument('output_prefix', type=str, help='Output png prefix to add \'MM_{mod}.png\' to the end of')
     parser.add_argument('-s', '--sample_size', 
                         type=int, default=10000, 
                         help='Number of reads to sample (default: 10000)')
 
     args = parser.parse_args()
-    input_file = args.input
-    output_file = args.output
+    input_file = args.input_bam
+    output_file = args.output_prefix
     sample_size = args.sample_size
 
     # sample number of reads passed in through argparse(default is 10,000)
